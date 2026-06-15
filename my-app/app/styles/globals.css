@@ -1,0 +1,542 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #020d4a;
+  --primary-light: #0a0e5c;
+  --accent: #0b0f4f;
+  --bg-main: #0a0a0f;
+  --bg-soft: #f5f5f5;
+  --text-main: #ffffff;
+  --text-muted: #bfc3d1;
+  --glow: rgba(11, 15, 79, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 20px 60px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.top-bar,
+.timeline,
+.bottom-controls,
+.left-controls,
+.right-controls,
+.controls-overlay,
+.player-controls,
+[data-player-controls],
+.player-overlay {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.hide-ui .top-bar,
+.hide-ui .timeline,
+.hide-ui .bottom-controls,
+.hide-ui .left-controls,
+.hide-ui .right-controls,
+.hide-ui .controls-overlay,
+.hide-ui .player-controls,
+.hide-ui [data-player-controls],
+.hide-ui .player-overlay,
+.hide-ui.controls-overlay,
+.hide-ui.player-controls,
+.hide-ui[data-player-controls],
+.hide-ui.player-overlay {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.nav-links a {
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.login-btn,
+.btn-primary,
+.btn-secondary,
+.insp-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.login-btn {
+  padding: 6px 16px 8px;
+  background: var(--accent);
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 120px 80px 80px;
+}
+
+.hero-video,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-video {
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  z-index: 1;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+  text-align: center;
+}
+
+.p1{
+  text-align: center;
+  align-content: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-primary,
+.btn-secondary,
+.insp-btn-primary {
+  border: 0;
+  padding: 12px 25px;
+  color: #fff;
+}
+
+.btn-primary,
+.insp-btn-primary {
+  background: var(--accent);
+}
+
+.btn-primary{
+
+}
+
+.btn-secondary {
+  border: 1px solid #fff;
+  background: transparent;
+}
+
+.inline-btn {
+  margin-top: 20px;
+}
+
+.categories,
+.about,
+.story,
+.insp-contact {
+  padding: 100px 60px;
+  background: #fff;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.centered {
+  text-align: center;
+}
+
+.categories-grid,
+.story-grid,
+.insp-footer-container {
+  display: grid;
+  gap: 20px;
+}
+
+.categories-grid {
+  width: 100%;
+  max-width: 1200px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 40px auto 0;
+  color: #fff;
+}
+
+.card,
+.story-card {
+  border-radius: 15px;
+  background: #02025f;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card {
+  display: flex;
+  min-height: 240px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.service-icon {
+  margin-bottom: 18px;
+  color: #fff;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card:hover,
+.story-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0, 8, 160, 0.62);
+}
+
+.about-container,
+.insp-contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.about-text {
+  max-width: 500px;
+}
+
+.about-text h3 {
+  margin: 20px 0;
+}
+
+.about-text p {
+  line-height: 1.7;
+}
+
+.about-text .btn-primary {
+  margin-top: 22px;
+}
+
+.about-images {
+  position: relative;
+  width: min(400px, 100%);
+  height: 300px;
+}
+
+.img {
+  position: absolute;
+  border-radius: 12px;
+}
+
+.img1 {
+  top: 0;
+  right: 0;
+  width: 250px;
+}
+
+.img2 {
+  right: 0;
+  bottom: 0;
+  width: 250px;
+}
+
+.img3 {
+  left: 0;
+  bottom: 0;
+  width: 140px;
+}
+
+.story {
+  text-align: center;
+}
+
+.story h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #02025f;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.story-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 40px;
+}
+
+.story-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.story-card img {
+  width: 90%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto 10px;
+}
+
+.story-card h4 {
+  margin-bottom: 8px;
+}
+
+.insp-contact-form,
+.insp-contact-info {
+  flex: 1;
+}
+
+.insp-contact-form h2,
+.insp-contact-info h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+.insp-contact-form input,
+.insp-contact-form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #000;
+  border-radius: 10px;
+  color: #000;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.insp-contact-form input:focus,
+.insp-contact-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(0, 3, 97, 0.25);
+}
+
+.insp-contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.insp-contact-info,
+.subtitle,
+.zeft-text {
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+.insp-contact-info p,
+.insp-footer-col p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.insp-contact-info p {
+  margin-bottom: 15px;
+}
+
+.insp-footer {
+  position: relative;
+  padding: 70px 60px;
+  background: #02025f;
+  color: #fff;
+}
+
+.insp-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  opacity: 0.6;
+}
+
+.insp-footer-container {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+}
+
+.insp-footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.insp-footer-col a,
+.insp-footer-col p {
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+.insp-footer-col a:hover {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    padding: 20px 24px;
+  }
+
+  .site-header__inner,
+  .about-container,
+  .insp-contact-container {
+    flex-direction: column;
+  }
+
+  .hero,
+  .categories,
+  .about,
+  .story,
+  .insp-contact,
+  .insp-footer {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .hero {
+    min-height: 88vh;
+    padding-top: 140px;
+    padding-bottom: 60px;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .about-images {
+    height: 260px;
+  }
+
+  .img1,
+  .img2 {
+    width: min(220px, 60vw);
+  }
+}
+
+@media (max-width: 1100px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+

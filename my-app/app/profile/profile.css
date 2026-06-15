@@ -1,0 +1,757 @@
+/* =====================================================
+   PROFILE PAGE — PROFESSIONAL DASHBOARD REDESIGN
+   ===================================================== */
+
+.profile-page {
+  min-height: 100vh;
+  background: #eef2ff;
+  padding-bottom: 80px;
+}
+
+.profile-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #1c1f3a;
+  background: #eef2ff;
+}
+
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
+
+.profile-hero {
+  background: linear-gradient(135deg, #080c3a 0%, #1c1f3a 55%, #2c2f5a 100%);
+  padding: 120px 40px 50px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 36px;
+}
+
+.profile-hero::before {
+  content: "";
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45,60,255,0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.profile-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -80px; left: -60px;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45,60,255,0.09), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Avatar --- */
+.hero-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-avatar {
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.28);
+  display: block;
+  background: #1c1f3a;
+}
+
+.hero-avatar-placeholder {
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 46px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.hero-photo-label {
+  position: absolute;
+  bottom: 2px; right: 2px;
+  background: linear-gradient(135deg, #2d3cff, #0a0f5c);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 5px 9px;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+
+.hero-photo-label:hover { opacity: 0.85; }
+
+/* --- Info --- */
+.hero-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-name {
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hero-role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(45,60,255,0.28);
+  border: 1px solid rgba(100,120,255,0.5);
+  color: #a5b4fc;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  padding: 4px 13px;
+  border-radius: 30px;
+  margin-bottom: 12px;
+}
+
+.hero-location {
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  margin: 0 0 14px;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.hero-tag {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.82);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* --- Actions --- */
+.hero-actions {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.edit-profile-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.32);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s;
+  white-space: nowrap;
+}
+
+.edit-profile-btn:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.55);
+}
+
+/* =====================================================
+   INFO SECTIONS
+   ===================================================== */
+
+.profile-sections {
+  max-width: 1040px;
+  margin: 0 auto 36px;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 18px;
+}
+
+.info-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 16px rgba(15,23,90,0.07);
+  border: 1px solid #e6eaf6;
+}
+
+.info-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f3fb;
+}
+
+.info-card-title {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #1c1f3a;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.info-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #9ca3af;
+}
+
+.info-value {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 500;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.info-value.empty {
+  color: #d1d5db;
+  font-style: italic;
+  font-weight: 400;
+}
+
+a.info-doc-link {
+  color: #4f46e5;
+  text-decoration: underline;
+  font-weight: 500;
+  word-break: break-all;
+}
+a.info-doc-link:hover {
+  color: #3730a3;
+}
+
+/* =====================================================
+   EDIT MODAL
+   ===================================================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,10,50,0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modal-fade-in 0.2s ease;
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-card {
+  background: linear-gradient(160deg, #0f1240 0%, #1c1f3a 40%, #252a52 100%);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  animation: modal-slide-up 0.24s ease;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+@keyframes modal-slide-up {
+  from { transform: translateY(28px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 28px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.09);
+  flex-shrink: 0;
+}
+
+.modal-title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.modal-close-btn {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.09);
+  border: none;
+  color: rgba(255,255,255,0.8);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.modal-close-btn:hover { background: rgba(255,255,255,0.16); }
+
+.modal-body {
+  padding: 22px 28px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* --- Section title inside modal --- */
+.modal-section-title {
+  color: rgba(165,180,252,0.9);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.modal-section-title + .modal-section-title,
+.modal-fields + .modal-section-title {
+  margin-top: 20px;
+}
+
+/* --- Field grid --- */
+.modal-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-field.span-2 {
+  grid-column: 1 / -1;
+}
+
+.modal-field label {
+  color: rgba(255,255,255,0.55);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.modal-field input,
+.modal-field textarea,
+.modal-field select {
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.16);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.modal-field input::placeholder,
+.modal-field textarea::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+
+.modal-field input:focus,
+.modal-field textarea:focus,
+.modal-field select:focus {
+  background: rgba(255,255,255,0.13);
+  border-color: rgba(100,120,255,0.65);
+  box-shadow: 0 0 0 3px rgba(100,120,255,0.14);
+}
+
+.modal-field textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.modal-field select {
+  cursor: pointer;
+  appearance: none;
+}
+
+.modal-field select option {
+  background: #1c1f3a;
+  color: white;
+}
+
+/* --- Footer --- */
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 18px 28px;
+  border-top: 1px solid rgba(255,255,255,0.09);
+  flex-shrink: 0;
+}
+
+.modal-cancel-btn {
+  padding: 11px 24px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255,255,255,0.22);
+  background: transparent;
+  color: rgba(255,255,255,0.72);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.modal-cancel-btn:hover {
+  border-color: rgba(255,255,255,0.48);
+  color: #ffffff;
+}
+
+.modal-save-btn {
+  padding: 11px 30px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2d3cff 0%, #0a0f5c 100%);
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  box-shadow: 0 6px 20px rgba(45,60,255,0.35);
+}
+
+.modal-save-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   MEDIA GALLERY WRAPPER (profile dark override)
+   ===================================================== */
+
+.profile-media-wrap {
+  max-width: 1040px;
+  margin: 0 auto 36px;
+  padding: 0 28px;
+}
+
+.profile-media-wrap .media-gallery {
+  background: linear-gradient(135deg, #1c1f3a, #2c2f5a);
+  border: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.22);
+}
+
+.profile-media-wrap .media-gallery-title {
+  color: #ffffff;
+}
+
+.profile-media-wrap .media-empty {
+  color: rgba(255,255,255,0.4);
+}
+
+.profile-media-wrap .media-item {
+  background: rgba(255,255,255,0.07);
+}
+
+/* =====================================================
+   LOGOUT
+   ===================================================== */
+
+.profile-logout-area {
+  text-align: center;
+  padding: 10px 0 20px;
+}
+
+.logout-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.logout-btn:hover { background: #b91c1c; }
+
+/* =====================================================
+   MODAL — LOGO UPLOAD SECTION
+   ===================================================== */
+
+.modal-logo-section {
+  margin-bottom: 22px;
+}
+
+.modal-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 16px 20px;
+}
+
+.modal-logo-preview {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.09);
+  border: 2px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-logo-placeholder {
+  color: rgba(255,255,255,0.3);
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+  padding: 4px;
+}
+
+.modal-logo-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-logo-hint {
+  color: rgba(255,255,255,0.45);
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.modal-logo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2d3cff 0%, #0a0f5c 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  user-select: none;
+  width: fit-content;
+  letter-spacing: 0.3px;
+}
+
+.modal-logo-btn:hover { opacity: 0.88; }
+.modal-logo-btn.uploading { opacity: 0.6; cursor: not-allowed; }
+
+/* =====================================================
+   MODAL — DOCUMENT / PHOTO UPLOAD FIELDS
+   ===================================================== */
+
+.modal-upload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.modal-doc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-file-label {
+  display: block;
+  color: rgba(255,255,255,0.55);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.modal-doc-filelist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modal-doc-filename {
+  color: #86efac;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* File picker row */
+.modal-file-wrapper {
+  display: flex;
+  align-items: stretch;
+  border: 1.5px solid rgba(255,255,255,0.16);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: rgba(255,255,255,0.06);
+}
+
+.modal-file-wrapper:hover {
+  border-color: rgba(100,120,255,0.6);
+  box-shadow: 0 0 0 3px rgba(100,120,255,0.12);
+}
+
+.modal-file-wrapper.uploading {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modal-file-icon {
+  padding: 9px 10px 9px 12px;
+  font-size: 14px;
+  background: rgba(255,255,255,0.07);
+  border-right: 1px solid rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+.modal-file-btn {
+  background: rgba(45,60,255,0.25);
+  color: #a5b4fc;
+  padding: 9px 13px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  letter-spacing: 0.2px;
+}
+
+.modal-file-name {
+  padding: 9px 12px;
+  color: rgba(255,255,255,0.35);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 860px) {
+  .profile-hero { padding: 100px 24px 36px; }
+
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .hero-info { min-width: unset; }
+
+  .hero-name { white-space: normal; text-align: center; }
+
+  .hero-tags { justify-content: center; }
+
+  .hero-actions {
+    align-items: center;
+    width: 100%;
+  }
+
+  .edit-profile-btn { width: 100%; max-width: 300px; }
+
+  .profile-sections { padding: 0 16px; grid-template-columns: 1fr; }
+
+  .profile-media-wrap { padding: 0 16px; }
+
+  .modal-fields { grid-template-columns: 1fr; }
+  .modal-field.span-2 { grid-column: 1; }
+  .modal-upload-grid { grid-template-columns: 1fr; }
+  .modal-logo-row { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .hero-avatar, .hero-avatar-placeholder { width: 100px; height: 100px; font-size: 34px; }
+  .modal-card { border-radius: 18px; }
+  .modal-header, .modal-body, .modal-footer { padding-left: 18px; padding-right: 18px; }
+}

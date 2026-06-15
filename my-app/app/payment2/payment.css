@@ -1,0 +1,184 @@
+.payment-page-wrapper {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Tab Selectors */
+.method-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.tab-btn {
+  padding: 10px 25px;
+  border: 1px solid #ddd;
+  background: #f0f0f0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-color: #fff;
+}
+
+/* Card Row */
+.cards-display-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.ui-credit-card {
+  width: 360px;
+  height: 210px;
+  border-radius: 20px;
+  padding: 25px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.ui-credit-card.focused {
+  outline: 2px solid #555;
+  transform: translateY(-5px);
+}
+
+.card-red { background: linear-gradient(135deg, #d32f2f 0%, #8b0000 100%); }
+.card-purple { background: linear-gradient(135deg, #512da8 0%, #311b92 100%); }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.card-digits {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.card-info-grid {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+
+.card-info-grid small {
+  font-size: 0.6rem;
+  display: block;
+}
+
+.holder-name {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.card-brand {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Checkout Grid */
+.main-checkout-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+}
+
+.details-form h3 {
+  margin-bottom: 20px;
+}
+
+.styled-input {
+  width: 100%;
+  background: #eaeff2;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.dual-inputs {
+  display: flex;
+  gap: 15px;
+}
+
+.checkbox-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Summary Card */
+.summary-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  height: fit-content;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 15px 0;
+}
+
+.total-row {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.btn-continue {
+  width: 100%;
+  background: #d1d5db;
+  color: #4b5563;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.btn-pay-now {
+  width: 100%;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn-pay-now:hover { background: #2563eb; }

@@ -1,0 +1,134 @@
+.sport {
+  background: #f3f4f6;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.top-bar {
+  background: #020b4a;
+  color: white;
+  padding: 15px 40px;
+    padding-top: 120px;
+
+}
+
+.top-bar h2 {
+  margin-bottom: 10px;
+}
+
+/* FILTERS */
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* FILTER BUTTON */
+.filter {
+  background: rgba(255,255,255,0.1);
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.filter.active {
+  background: #3b82f6;
+}
+
+/* SEARCH */
+.filters input {
+  margin-left: 20px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 40px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* LOGO */
+.logo-box {
+  width: 80px;
+  height: 80px;
+  background: #ddd;
+  border-radius: 20px;
+  margin: 0 auto 10px;
+}
+
+/* TEXT */
+.card p {
+  font-size: 14px;
+}
+
+.stars {
+  color: gold;
+}
+
+/* BUTTON */
+.card button {
+  margin-top: 10px;
+  background: #020b4a;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 40px;
+}
+
+.pagination span {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pagination span:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.pagination .active {
+  background: #020b4a;
+  color: white;
+}

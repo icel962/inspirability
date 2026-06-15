@@ -1,0 +1,126 @@
+.profile {
+  padding: 120px 100px;
+  background: #f5f5f5;
+}
+
+/* ================= TOP CARD ================= */
+.profile-card {
+  background: linear-gradient(135deg, #1c1f3a, #2c2f5a);
+  color: white;
+  padding: 40px 20px;
+  border-radius: 25px;
+  text-align: center;
+  max-width: 380px;
+  margin: 0 auto 60px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+.image-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.upload-btn {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  background: linear-gradient(135deg, #2d3cff, #0a0f5c);
+  color: white;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card.editing {
+  border: 2px solid #4c5cff;
+  box-shadow: 0 0 20px rgba(76,92,255,0.4);
+}
+/* ================= GRID ================= */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: center;
+  gap: 30px;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: linear-gradient(135deg, #1c1f3a, #2c2f5a);
+  color: white;
+  padding: 25px;
+  border-radius: 20px;
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card p {
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* 🔥 input */
+.card input {
+  width: 100%;
+  margin: 15px 0;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+/* ================= BUTTON ================= */
+
+.card button {
+  margin-top: auto;
+  width: 130px;
+  height: 40px;
+  align-self: center;
+  background: linear-gradient(135deg, #2d3cff, #0a0f5c);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* ================= LOGOUT ================= */
+.logout {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.logout button {
+  width: 150px;
+  height: 45px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

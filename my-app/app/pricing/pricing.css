@@ -1,0 +1,153 @@
+.pricing {
+  background: #1e1f2b;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.pricing h1 {
+  padding: 20px;
+  font-size: 42px;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-top: 10px;
+}
+
+/* ================= TOGGLE ================= */
+
+.toggle {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.toggle span {
+  color: #888;
+  transition: 0.3s;
+}
+
+.toggle .active {
+  color: white;
+  font-weight: 600;
+}
+
+/* SWITCH */
+
+.switch {
+  width: 65px;
+  height: 32px;
+  background: #0f172a;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+/* SWITCH HOVER */
+
+.switch:hover {
+  box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6;
+  transform: scale(1.05);
+}
+
+/* ACTIVE SWITCH */
+
+.switch.active {
+  background: #020617;
+}
+
+/* CIRCLE */
+
+.circle {
+  width: 24px;
+  height: 24px;
+  background: #2563eb;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: all 0.3s ease;
+}
+
+/* MOVE RIGHT */
+
+.switch.active .circle {
+  left: 37px;
+}
+
+/* ================= CARDS ================= */
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #2a2c3c;
+  padding: 30px;
+  border-radius: 20px;
+  width: 280px;
+  text-align: left;
+  transition: 0.3s ease;
+  border: 1px solid transparent;
+}
+
+/* CARD HOVER */
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border: 1px solid #3b82f6;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.featured {
+  border: 2px solid #3b82f6;
+}
+
+.price {
+  color: #3b82f6;
+  font-size: 30px;
+  white-space: nowrap;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.card li {
+  margin: 8px 0;
+}
+
+/* ================= BUTTON ================= */
+
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+button.primary {
+  background: #2563eb;
+}

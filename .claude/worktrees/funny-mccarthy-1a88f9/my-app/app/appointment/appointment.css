@@ -1,0 +1,182 @@
+/* SECTION BACKGROUND */
+.appointment-section {
+  min-height: 100vh;
+  padding: 120px 20px;
+  background: url("/images/home 1.png") center/cover no-repeat;
+}
+
+/* WRAPPER */
+.appointment-wrapper {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.appointment-wrapper h1 {
+  font-size: 32px;
+  color: #0a1f4d;
+  margin-bottom: 10px;
+}
+
+.appointment-subtitle {
+  color: #36383b;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+/* GLASS CARD 🔥 */
+.appointment-card {
+  background: rgba(10, 15, 40, 0.6); 
+  backdrop-filter: blur(14px);
+  border-radius: 22px;
+  padding: 35px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  animation: fadeUp 0.8s ease;
+}
+
+.card-content h2 {
+  color: white;
+  margin-bottom: 5px;
+}
+
+.card-subtitle {
+  color: rgba(255,255,255,0.8);
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+/* FORM */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  color: white;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+/* INPUTS 🔥 */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  height: 44px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.08);
+  color: #fff; /* Text color when selected */
+  outline: none;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+/* FIX: DROPDOWN OPTIONS BLACK TEXT */
+.form-group select option {
+  color: #000000;      /* Makes text in the list black */
+  background: #ffffff; /* Ensures list background is white */
+}
+
+.form-group textarea {
+  height: 120px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #9ed8df;
+  background: rgba(255,255,255,0.15);
+}
+
+/* INFO BOX */
+.info-box {
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  text-align: left;
+}
+
+.info-box h3 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.info-box li {
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+/* BUTTONS */
+.send-btn {
+  margin-top: 20px;
+  background: #2bbcd3;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.send-btn:hover {
+  background: #23a8be;
+  transform: translateY(-1px);
+}
+
+/* LOGOUT BUTTON ONLY */
+.logout-btn-nav {
+  background: transparent;
+  color: #ff4d4d; /* Red text for logout */
+  border: 1px solid #ff4d4d;
+  padding: 6px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.logout-btn-nav:hover {
+  background: #ff4d4d;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

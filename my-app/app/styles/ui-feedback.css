@@ -1,0 +1,270 @@
+.notif-overlay,
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(5, 8, 22, 0.76);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: ui-overlay-in 0.24s ease;
+}
+
+@keyframes ui-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.notif-card,
+.confirm-box {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  border-radius: 30px;
+  border: 1px solid rgba(119, 141, 255, 0.22);
+  background:
+    radial-gradient(circle at top, rgba(38, 198, 255, 0.14), transparent 28%),
+    linear-gradient(180deg, #0f1550 0%, #10194a 100%);
+  box-shadow: 0 30px 90px rgba(5, 8, 22, 0.7);
+  animation: ui-card-in 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes ui-card-in {
+  from {
+    opacity: 0;
+    transform: scale(0.84) translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.notif-card::before,
+.confirm-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(65, 231, 255, 0.12), transparent 18%),
+    radial-gradient(circle at 82% 78%, rgba(65, 231, 255, 0.12), transparent 16%),
+    radial-gradient(circle at 78% 18%, rgba(65, 231, 255, 0.16), transparent 8%),
+    radial-gradient(circle at 22% 74%, rgba(65, 231, 255, 0.16), transparent 8%);
+  pointer-events: none;
+}
+
+.notif-card {
+  padding: 38px 36px 32px;
+}
+
+.confirm-box {
+  padding: 40px 32px 32px;
+  max-width: 420px;
+}
+
+.notif-glow,
+.confirm-glow {
+  width: 108px;
+  height: 108px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle, rgba(70, 225, 255, 0.58) 0%, rgba(29, 94, 215, 0.34) 46%, rgba(13, 20, 75, 0) 72%);
+  box-shadow:
+    0 0 0 12px rgba(27, 93, 182, 0.12),
+    0 0 36px rgba(45, 216, 255, 0.36);
+}
+
+.notif-icon,
+.confirm-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(20, 29, 95, 0.9);
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.notif-icon {
+  border: 2px solid rgba(139, 230, 255, 0.4);
+}
+
+.confirm-icon {
+  border: 2px solid rgba(255, 147, 180, 0.42);
+}
+
+.notif-title,
+.confirm-title {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.notif-message,
+.confirm-message {
+  color: rgba(229, 231, 235, 0.9);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 28px;
+}
+
+.notif-btn,
+.confirm-cancel,
+.confirm-ok {
+  min-width: 170px;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+  letter-spacing: 0.3px;
+}
+
+.notif-btn:hover,
+.confirm-cancel:hover,
+.confirm-ok:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.notif-card.notif-success .notif-btn,
+.notif-card.notif-info .notif-btn {
+  background: linear-gradient(90deg, #2ed6ff 0%, #30b8df 100%);
+  color: #fff;
+  box-shadow: 0 16px 34px rgba(31, 212, 255, 0.25);
+}
+
+.notif-card.notif-error .notif-btn,
+.notif-card.notif-warning .notif-btn {
+  background: linear-gradient(90deg, #ff758f 0%, #ff5d7d 100%);
+  color: #fff;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.confirm-cancel {
+  background: rgba(255, 255, 255, 0.1);
+  color: #d1d5db;
+}
+
+.confirm-ok {
+  background: linear-gradient(90deg, #ff758f 0%, #ff5d7d 100%);
+  color: #fff;
+}
+
+.field-error {
+  display: block;
+  color: #ff8ba3;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 5px;
+  padding-left: 2px;
+  animation: error-in 0.2s ease;
+}
+
+@keyframes error-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+  border-color: #ff4d6d !important;
+  box-shadow: 0 0 0 3px rgba(255, 77, 109, 0.15) !important;
+}
+
+.input-field-error {
+  border-color: #ff4d6d !important;
+  box-shadow: 0 0 0 3px rgba(255, 77, 109, 0.15) !important;
+}
+
+.required-star {
+  color: #ff4d6d;
+  margin-left: 2px;
+}
+
+/* ── Shared file-upload input styling (used on signup + admin pages) ── */
+.file-upload-wrapper {
+  display: flex;
+  align-items: stretch;
+  border: 1.5px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fff;
+}
+
+.file-upload-wrapper:hover {
+  border-color: #2d3cff;
+  box-shadow: 0 0 0 3px rgba(45, 60, 255, 0.1);
+}
+
+.file-upload-btn {
+  background: #0a0f5c;
+  color: #fff;
+  padding: 13px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
+}
+
+.file-upload-name {
+  padding: 13px 16px;
+  color: #999;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  background: #fafafa;
+  border-left: 1px solid #eee;
+}
+
+.file-label {
+  display: block;
+  font-size: 13px;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 560px) {
+  .notif-card,
+  .confirm-box {
+    padding: 30px 22px 24px;
+    border-radius: 24px;
+  }
+
+  .notif-btn,
+  .confirm-cancel,
+  .confirm-ok {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .confirm-actions {
+    flex-direction: column;
+  }
+}

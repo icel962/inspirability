@@ -1,0 +1,118 @@
+.requests-container {
+  min-height: 100vh;
+  padding: 120px 40px;
+  background: #050816;
+  color: white;
+}
+
+.page-title {
+  font-size: 42px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #7c8cff;
+}
+
+.requests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.request-card {
+  background: #151933;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.request-card:hover {
+  transform: translateY(-5px);
+}
+
+.request-card h3 {
+  margin-bottom: 15px;
+  color: #fff;
+  word-break: break-word;
+}
+
+.request-card p {
+  margin: 10px 0;
+  color: #d6d6d6;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.approve-btn,
+.reject-btn {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.approve-btn {
+  background: #20c997;
+  color: white;
+}
+
+.approve-btn:hover {
+  background: #18b383;
+}
+
+.reject-btn {
+  background: #ff4d6d;
+  color: white;
+}
+
+.reject-btn:hover {
+  background: #e63b5d;
+}
+
+.request-card.is-approved {
+  border: 2px solid #20c997;
+  background: #0a2a1e;
+}
+
+.request-card.is-rejected {
+  border: 2px solid #ff4d6d;
+  background: #2a0a14;
+}
+
+.decision-badge {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.decision-badge.approved {
+  background: #20c997;
+  color: #fff;
+}
+
+.decision-badge.rejected {
+  background: #ff4d6d;
+  color: #fff;
+}
+
+.empty-msg {
+  color: #aaa;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
