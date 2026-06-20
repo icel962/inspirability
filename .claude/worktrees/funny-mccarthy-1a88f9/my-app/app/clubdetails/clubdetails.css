@@ -1,0 +1,138 @@
+/* 🔥 FORCE NAVBAR TO NORMAL SIZE ON THIS PAGE */
+.navbar {
+  height: 70px !important;
+  padding: 0 40px !important;
+  align-items: center !important;
+}
+
+
+
+.club {
+  background: #f3f4f6;
+  min-height: auto;
+  padding: 20px 40px;
+  margin-top: 0;   /* ✅ important */
+}
+
+/* MAIN CONTAINER */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+    padding-top: 0;
+
+}
+
+/* LEFT SIDE */
+.left {
+  display: flex;
+  gap: 20px;
+ padding-top: 80px;
+
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+}
+
+/* DETAILS */
+.details h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  
+}
+
+.details p {
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+.green {
+  color: green;
+  font-weight: bold;
+}
+
+/* COACH */
+.coach {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.coach img {
+  width: 120px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* BUTTON */
+.appointment {
+  margin-top: 20px;
+  background: #020b4a;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.appointment:hover {
+  transform: scale(1.05);
+}
+
+/* RIGHT SIDE */
+.right {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ padding-top: 80px;
+
+}
+
+.right h2 {
+  margin-bottom: 10px;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* COLORS */
+.whatsapp {
+  background: #a7d7a9;
+}
+
+.facebook {
+  background: #2f3ccf;
+  color: white;
+}
+
+.call {
+  background: #d9a3a3;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #ff7a00, #c13584);
+  color: white;
+}
+
+.feedback {
+  background: black;
+  color: white;
+}
+
+/* HOVER */
+.btn:hover {
+  transform: scale(1.05);
+}

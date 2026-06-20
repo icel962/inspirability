@@ -1,0 +1,164 @@
+.provider-container {
+  padding: 40px 20px 60px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.provider-container h1 {
+  font-size: 36px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.title {
+  color: #fff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.appointment-card {
+  position: relative;
+  background: #1c1f3a;
+  color: white;
+  padding: 24px;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.appointment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.26);
+}
+
+.card-info {
+  display: grid;
+  gap: 10px;
+}
+
+.card-info p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.card-info p strong {
+  display: inline-block;
+  min-width: 145px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  color: #ffcf70;
+  background: rgba(255, 166, 0, 0.16);
+}
+
+.status.approved {
+  color: #83f0a2;
+  background: rgba(40, 167, 69, 0.18);
+}
+
+.status.rejected {
+  color: #ff98a3;
+  background: rgba(220, 53, 69, 0.18);
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.25s ease, transform 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.btn.approve {
+  background: #28a745;
+  color: white;
+}
+
+.btn.approve:hover {
+  background: #218838;
+  transform: translateY(-1px);
+}
+
+.btn.reject {
+  background: #dc3545;
+  color: white;
+}
+
+.btn.reject:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+
+.delete-icon {
+  position: absolute;
+  right: 18px;
+  top: 28px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: 0.3s;
+}
+
+.delete-icon:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.06);
+}
+
+@media (max-width: 640px) {
+  .provider-container {
+    padding: 28px 14px 40px;
+  }
+
+  .provider-container h1 {
+    margin-top: 36px;
+    font-size: 30px;
+  }
+
+  .appointment-card {
+    padding: 20px 16px;
+  }
+
+  .card-info p strong {
+    min-width: 0;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
