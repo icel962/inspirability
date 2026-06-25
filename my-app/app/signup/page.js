@@ -148,11 +148,11 @@ const ROLE_FIELDS = {
 };
 
 const ROLES = [
-  { name: "Parent", img: "/images/parent.png" },
-  { name: "School", img: "/images/school.png" },
-  { name: "Clinic", img: "/images/clinic.png" },
-  { name: "Admin",  img: "/images/admin.png"  },
-  { name: "Sport",  img: "/images/sport.png"  },
+  { name: "Parent", img: "/images/Parent.png" },
+  { name: "School", img: "/images/School.png" },
+  { name: "Clinic", img: "/images/Clinic.png" },
+  { name: "Admin",  img: "/images/Admin.png"  },
+  { name: "Sport",  img: "/images/Sport.png"  },
 ];
 
 const NUMERIC_FIELDS = [
