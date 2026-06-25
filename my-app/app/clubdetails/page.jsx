@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { normalizeProviderDetails } from "../utils/providerPresentation";
@@ -85,7 +85,7 @@ function ActionButton({ href, className, children }) {
   );
 }
 
-export default function ClubPage() {
+ function ClubDetailsContent() {
   const searchParams = useSearchParams();
   const type = searchParams.get("type") || "sport";
   const id = searchParams.get("id");
@@ -211,5 +211,23 @@ export default function ClubPage() {
         </div>
       </div>
     </section>
+  );
+}
+
+export default function ClubPage() {
+  return (
+    <Suspense
+      fallback={
+        <section className="provider-details-page">
+          <div className="provider-details-shell">
+            <div className="provider-state-card">
+              Loading provider details...
+            </div>
+          </div>
+        </section>
+      }
+    >
+      <ClubDetailsContent />
+    </Suspense>
   );
 }
